@@ -1,1 +1,2 @@
 # Learning Swift through A Swift Kickstart
+I am working through the book [*A Swift Kickstart* by Daniel Steinberg](https://itunes.apple.com/us/book/a-swift-kickstart/id891801923?mt=11 "A Swift Kickstart in the iBooks Store") and you should to.
