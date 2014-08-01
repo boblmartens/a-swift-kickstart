@@ -1,0 +1,9 @@
+* Page 43
+** let hello bring up error in playground because I did not remove prior declaration
+
+* Page 52
+** output of REPL for the mixed Array is [NSObject] insated of __NSArray
+** check this entire page, some things have changed with Beta 4
+
+* Page 53
+** see Page 52, things have changed drastically
