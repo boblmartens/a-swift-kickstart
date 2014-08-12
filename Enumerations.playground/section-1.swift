@@ -4,9 +4,11 @@ enum BasketballPosition {
     case Center
 }
 
-var ballHandler = BasketballPosition.PointGuard
-ballHandler = .SmallForward
+var colorCommentary = ""
+var ballHandler = BasketballPosition.PowerForward
 
-var shooter:BasketballPosition
+switch ballHandler {
+case .PowerForward: colorCommentary = "The power forward with the ball."
+}
 
-shooter = .PowerForward
+colorCommentary
