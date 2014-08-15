@@ -32,7 +32,15 @@ enum BasketballPosition {
             return playerName
         }
     }
+    
+    func playerDescription() -> String {
+        return "The ball handler is number \(self.uniformNumber), \(self.playerName)."
+    }
 }
 
 var ballHandler = BasketballPosition.PowerForward(21, "Tim Duncan")
-let colorCommentary = "The ball handler is number \(ballHandler.uniformNumber), \(ballHandler.playerName)"
+func commentary (position:BasketballPosition) -> String {
+    return position.playerDescription()
+}
+
+let colorCommentary = commentary(ballHandler)
