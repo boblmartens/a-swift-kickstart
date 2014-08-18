@@ -1,5 +1,17 @@
 import Foundation
 
+prefix operator √ {}
+
+prefix func √ (argument:Double) -> Double {
+    return sqrt(argument)
+}
+
+infix operator  ^-^ {precedence 160}
+
+func ^-^ (number:Double, power:Double) -> Double {
+    return pow(number, power)
+}
+
 struct Vertex {
     var x, y: Double
     
@@ -10,7 +22,7 @@ struct Vertex {
     func distanceFrom(otherPoint: Vertex) -> Double {
         let deltaX = otherPoint.x - self.x
         let deltaY = otherPoint.y - self.y
-        let distance = sqrt(deltaX * deltaX + deltaY * deltaY)
+        let distance = √(deltaX^-^2 + deltaY^-^2)
         return distance
     }
 }
@@ -35,3 +47,4 @@ pointTwo.y = 8.0
 pointOne.y
 
 pointOne.distanceFrom(pointTwo)
+
