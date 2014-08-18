@@ -15,15 +15,9 @@ func ^-^ (number:Double, power:Double) -> Double {
 struct Vertex {
     var x, y: Double
     var distanceFromOrigin:Double{
-        get {
-            let origin:Vertex = Vertex(x: 0, y: 0)
-            return distanceFrom(origin)
-        }
-        set (newDistanceFromOrigin) {
-            let multiplier = newDistanceFromOrigin/distanceFromOrigin
-            x *= multiplier
-            y *= multiplier
-        }
+        let origin:Vertex = Vertex(x: 0, y: 0)
+        return distanceFrom(origin)
+
     }
     
     func coordinates() -> (Double, Double) {
@@ -47,7 +41,6 @@ point.y = 4.0
 
 var pointOne = Vertex(x: 3.0, y: 4.0)
 pointOne.distanceFromOrigin
-pointOne.distanceFromOrigin = 20
 pointOne
 var pointTwo = pointOne
 
