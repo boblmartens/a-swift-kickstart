@@ -30,6 +30,16 @@ struct Vertex {
         let distance = √(deltaX^-^2 + deltaY^-^2)
         return distance
     }
+    
+    mutating func scaleBy(multiplier:Double) {
+        x *= multiplier
+        y *= multiplier
+    }
+    
+    mutating func moveBy(x:Double, y:Double) {
+        self.x += x
+        self.y += y
+    }
 }
 
 var point = Vertex(x: 5.0, y: 6.0)
