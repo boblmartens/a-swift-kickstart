@@ -36,7 +36,7 @@ struct Vertex {
         y *= multiplier
     }
     
-    mutating func moveBy(x:Double, y:Double) {
+    mutating func moveByX(x:Double, y:Double) {
         self.x += x
         self.y += y
     }
@@ -65,3 +65,8 @@ pointOne.y
 
 pointOne.distanceFrom(pointTwo)
 
+point = Vertex(x: 3.0, y: 4.0)
+point.scaleBy(3)
+point
+point.moveByX(2, y: 5)
+point
