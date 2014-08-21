@@ -11,7 +11,23 @@ class BasketballTeam {
     }
 }
 
-let jazz = BasketballTeam(name: "Jazz", affiliation: "Utah")
+class ProfessionalBasketballTeam: BasketballTeam {
+    let league: String
+    init(name: String, affiliation: String, league: String) {
+        self.league = league
+        super.init(name: name, affiliation: affiliation)
+    }
+}
+
+class CollegeBasketballTeam: BasketballTeam {
+    let conference: String
+    init(name: String, affiliation: String, conference: String) {
+        self.conference = conference
+        super.init(name: name, affiliation: affiliation)
+    }
+}
+
+let jazz = ProfessionalBasketballTeam(name: "Jazz", affiliation: "Utah", league: "NBA")
 jazz.colorCommentary()
-let buckeyes = BasketballTeam(name: "Buckeyes", affiliation: "Ohio State")
+let buckeyes = CollegeBasketballTeam(name: "Buckeyes", affiliation: "Ohio State", conference: "Big 10")
 buckeyes.colorCommentary()
