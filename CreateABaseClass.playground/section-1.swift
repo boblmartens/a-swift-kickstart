@@ -1,6 +1,8 @@
 class BasketballTeam {
     var name, affiliation: String
-    
+    convenience init(name:String) {
+        self.init(name:name, affiliation:"Intramural Team")
+    }
     init(name:String, affiliation:String) {
         self.name = name
         self.affiliation = affiliation
@@ -13,6 +15,9 @@ class BasketballTeam {
 
 class ProfessionalBasketballTeam: BasketballTeam {
     let league: String
+    convenience init() {
+        self.init(name:"Globetrotters", affiliation:"Harlem", league:"Independent League")
+    }
     init(name: String, affiliation: String, league: String) {
         self.league = league
         super.init(name: name, affiliation: affiliation)
