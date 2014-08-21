@@ -22,7 +22,6 @@ class ProfessionalBasketballTeam: BasketballTeam {
         self.league = league
         super.init(name: name, affiliation: affiliation)
     }
-    
     override func colorCommentary() -> String {
         return super.colorCommentary() + " of the \(league)"
     }
