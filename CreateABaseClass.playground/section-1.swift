@@ -1,5 +1,5 @@
 class BasketballTeam {
-    let name, affiliation: String
+    var name, affiliation: String
     
     init(name:String, affiliation:String) {
         self.name = name
@@ -31,7 +31,11 @@ class CollegeBasketballTeam: BasketballTeam {
     }
 }
 
-let jazz = ProfessionalBasketballTeam(name: "Jazz", affiliation: "Utah", league: "NBA")
-jazz.colorCommentary()
+let originalJazz = ProfessionalBasketballTeam(name: "Jazz", affiliation: "New Orleans", league: "NBA")
+let relocatedJazz = originalJazz
+relocatedJazz.affiliation = "Utah"
+originalJazz.colorCommentary()
+relocatedJazz.colorCommentary()
+
 let buckeyes = CollegeBasketballTeam(name: "Buckeyes", affiliation: "Ohio State", conference: "Big 10")
 buckeyes.colorCommentary()
