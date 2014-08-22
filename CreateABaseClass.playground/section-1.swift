@@ -11,6 +11,7 @@ class BasketballTeam {
     }
     convenience init(name:String) {
         self.init(name:name, affiliation:"Intramural Team")
+        println("Creating team named \(name)")
     }
     init(name:String, affiliation:String) {
         println("designated initializer before property inits in BasketballTeam")
@@ -62,6 +63,17 @@ class CollegeBasketballTeam: BasketballTeam {
     }
 }
 
+class Announcer {
+    var name:String
+    deinit {
+        
+    }
+    lazy var team = BasketballTeam(name:"Old and Tired")
+    init(name:String){
+        self.name = name
+    }
+}
+
 let originalJazz = ProfessionalBasketballTeam(name: "Jazz", affiliation: "New Orleans", league: "NBA")
 let relocatedJazz = originalJazz
 relocatedJazz.affiliation = "Utah"
@@ -73,3 +85,7 @@ buckeyes.colorCommentary()
 
 let trotters = ProfessionalBasketballTeam()
 trotters.colorCommentary()
+
+let announcer = Announcer(name: "Booming Voice")
+println("Created \(announcer.name)")
+announcer.team.colorCommentary()
