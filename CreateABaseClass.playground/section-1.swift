@@ -1,5 +1,14 @@
 class BasketballTeam {
-    var name, affiliation: String
+    var name: String
+    var affiliation: String {
+        willSet(newAffiliation) {
+            println("Before: changing affiliation from \(affiliation) to \(newAffiliation)")
+        }
+        
+        didSet(oldAffiliation) {
+            println("After: changed affiliation from \(oldAffiliation) to \(affiliation)")
+        }
+    }
     convenience init(name:String) {
         self.init(name:name, affiliation:"Intramural Team")
     }
@@ -17,6 +26,14 @@ class BasketballTeam {
 
 class ProfessionalBasketballTeam: BasketballTeam {
     let league: String?
+    override var affiliation:String {
+        willSet(newAffiliation) {
+            println("Before (subclass): changing affiliation from \(affiliation) to \(newAffiliation)")
+        }
+        didSet(oldAffiliation) {
+            println("After (subclass): changed affiliation from \(oldAffiliation) to \(affiliation)")
+        }
+    }
     convenience init() {
         println("convenience initializer before self.init in ProfessionalBasketballTeam")
         self.init(name:"Globetrotters", affiliation:"Harlem", league:nil)
