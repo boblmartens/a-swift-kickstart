@@ -16,20 +16,24 @@ class BasketballTeam {
 }
 
 class ProfessionalBasketballTeam: BasketballTeam {
-    let league: String
+    let league: String?
     convenience init() {
         println("convenience initializer before self.init in ProfessionalBasketballTeam")
-        self.init(name:"Globetrotters", affiliation:"Harlem", league:"Independent League")
+        self.init(name:"Globetrotters", affiliation:"Harlem", league:nil)
         println("convenience initializer after self.init in ProfessionalBasketballTeam")
     }
-    init(name: String, affiliation: String, league: String) {
+    init(name: String, affiliation: String, league: String?) {
         println("designated initializer before self.init in ProfessionalBasketballTeam")
         self.league = league
         super.init(name: name, affiliation: affiliation)
         println("designated initialzier after self.init in ProfessionalBasketballTeam")
     }
     override func colorCommentary() -> String {
-        return super.colorCommentary() + " of the \(league)"
+        var comment = super.colorCommentary()
+        if let validLeague = league {
+            comment += "of the \(league)"
+        }
+        return comment
     }
 }
 
